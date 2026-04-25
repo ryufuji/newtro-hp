@@ -7,6 +7,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const rocketData = await fetch(
+    new URL("./_assets/og-rocket.png", import.meta.url),
+  ).then((res) => res.arrayBuffer());
+  const rocketSrc = `data:image/png;base64,${Buffer.from(rocketData).toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -43,23 +48,14 @@ export default async function Image() {
             zIndex: 1,
           }}
         >
-          <svg
-            width="180"
-            height="240"
-            viewBox="0 0 200 280"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line x1="100" y1="6" x2="100" y2="34" stroke="#0a0a0a" strokeWidth="3" />
-            <circle cx="100" cy="6" r="4" fill="#0a0a0a" />
-            <path d="M75 50 Q100 24 125 50 L125 88 L75 88 Z" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-            <path d="M70 88 L130 88 L130 200 L70 200 Z" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-            <circle cx="100" cy="120" r="22" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-            <line x1="86" y1="106" x2="114" y2="134" stroke="#0a0a0a" strokeWidth="3" />
-            <path d="M70 170 L40 230 L70 220 Z" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-            <path d="M130 170 L160 230 L130 220 Z" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-            <path d="M85 200 L85 240 L100 270 L115 240 L115 200 Z" stroke="#0a0a0a" strokeWidth="3" fill="none" />
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={rocketSrc}
+            width={210}
+            height={310}
+            alt=""
+            style={{ objectFit: "contain" }}
+          />
 
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div

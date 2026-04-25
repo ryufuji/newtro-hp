@@ -14,7 +14,7 @@ export function Hero() {
           NEW × RETRO / APPAREL FROM OMATSURI
         </p>
         <div className="mt-8 flex justify-center">
-          <Rocket className="w-28 sm:w-36 text-ink" />
+          <Rocket className="w-32 sm:w-44" priority />
         </div>
 
         <h1 className="mt-6 font-display text-5xl sm:text-7xl lg:text-8xl leading-none">

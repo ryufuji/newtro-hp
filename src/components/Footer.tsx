@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-              <Rocket className="w-10 text-paper" hover={false} />
+              <Rocket className="w-10" hover={false} />
               <p className="font-display text-3xl">NewTro</p>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-paper/80">
