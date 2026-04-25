@@ -3,7 +3,7 @@ import { CONTACT_EMAIL, INSTAGRAM_URL } from "@/lib/env";
 import { Rocket } from "./Rocket";
 
 const sns = [
-  { label: "Instagram", href: INSTAGRAM_URL, handle: "@newtro" },
+  { label: "Instagram", href: INSTAGRAM_URL, handle: "@newtro8" },
 ];
 
 export function Footer() {
