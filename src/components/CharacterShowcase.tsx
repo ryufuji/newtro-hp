@@ -17,48 +17,42 @@ const INTERVAL_MS = 4500;
 
 export function CharacterShowcase() {
   const [index, setIndex] = useState(0);
-  const [fading, setFading] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setFading(true);
-      window.setTimeout(() => {
-        setIndex((i) => (i + 1) % characters.length);
-        setFading(false);
-      }, 250);
+      setIndex((i) => (i + 1) % characters.length);
     }, INTERVAL_MS);
     return () => clearInterval(id);
   }, []);
-
-  function gotoIndex(i: number) {
-    if (i === index) return;
-    setFading(true);
-    window.setTimeout(() => {
-      setIndex(i);
-      setFading(false);
-    }, 250);
-  }
 
   const current = characters[index];
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
       <div className="relative aspect-[4/5] sm:aspect-[1/1]">
-        <div
-          className={`absolute inset-0 transition-opacity duration-300 ease-out ${
-            fading ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          <Image
-            key={current.src}
-            src={current.src}
-            alt={current.alt}
-            fill
-            priority={index === 0}
-            sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 640px"
-            style={{ objectFit: "contain" }}
-          />
-        </div>
+        {characters.map((c, i) => (
+          <div
+            key={c.src}
+            aria-hidden={i !== index}
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: i === index ? 1 : 0,
+              transition: "opacity 600ms ease-in-out",
+              pointerEvents: i === index ? "auto" : "none",
+            }}
+          >
+            <Image
+              src={c.src}
+              alt={c.alt}
+              fill
+              priority={i < 2}
+              loading={i < 2 ? "eager" : "lazy"}
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 640px"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        ))}
       </div>
 
       <div className="mt-4 flex items-center justify-center gap-3">
@@ -76,7 +70,7 @@ export function CharacterShowcase() {
           <button
             key={c.src}
             type="button"
-            onClick={() => gotoIndex(i)}
+            onClick={() => setIndex(i)}
             aria-label={`Show ${c.alt}`}
             className={`h-1.5 rounded-full transition-all ${
               i === index ? "w-8 bg-ink" : "w-1.5 bg-mute hover:bg-ink/60"
