@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NewTro — Pre-Launch Site
 
-## Getting Started
+NewなモノとRetroなモノが共存する時代を表現するアパレルブランド。
+Phase 1（カウントダウンサイト）の実装。
 
-First, run the development server:
+- Launch: **2026-05-01 12:00 JST**
+- Stack: Next.js 16 (App Router) / TypeScript / Tailwind CSS v4
+- Hosting: Vercel
+- Forms: Tally (iframe embed)
+
+---
+
+## ローカル開発
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.local.example .env.local   # 値を埋める
+npm run dev                        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ビルド確認:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 環境変数
 
-To learn more about Next.js, take a look at the following resources:
+`.env.local` に以下を設定（または Vercelプロジェクトの Environment Variables に登録）。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Key | 用途 | 公開 |
+|---|---|---|
+| `NEXT_PUBLIC_TALLY_SIGNUP_FORM_ID` | Founding Member登録フォームのTally Form ID | クライアント |
+| `NEXT_PUBLIC_TALLY_INVITE_FORM_ID` | Premium Member招待フォームのTally Form ID | クライアント |
+| `NEXT_PUBLIC_INSTAGRAM_URL` | InstagramプロフィールURL | クライアント |
+| `NEXT_PUBLIC_SITE_URL` | サイトの公開URL（OGP用） | クライアント |
+| `INVITE_SECRET` | 招待トークンHMAC署名鍵（32文字以上） | サーバ専用 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tally Form ID の取得方法
 
-## Deploy on Vercel
+1. [tally.so](https://tally.so) でアカウント作成
+2. 「Founding Member 登録」用と「Premium Member 招待登録」用の2つのフォームを作成
+3. 招待用フォームには **Hidden field** で `token` を追加（リファラから自動取得）
+4. フォームのURL末尾セグメント（例: `https://tally.so/r/wzPgN1` → `wzPgN1`）を環境変数に貼り付け
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 招待トークンの発行
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# 任意の数だけ招待リンクを発行
+INVITE_SECRET=xxxx npm run gen:invite -- --count 30
+```
+
+詳しくは `scripts/gen-invite.ts` を参照。
+
+---
+
+## Vercelデプロイ手順
+
+### 初回デプロイ
+
+1. [vercel.com/new](https://vercel.com/new) でリポジトリを接続（Gitホスティング先にpush済みであること）
+2. **Framework**: Next.js（自動検出）
+3. **Environment Variables** に上記の値を登録
+4. Deploy → プレビューURLが発行される
+
+### CLIで直接デプロイする場合
+
+```bash
+npm i -g vercel
+vercel login
+vercel                  # プレビュー
+vercel --prod           # 本番
+```
+
+### 独自ドメイン (newtro.jp) の接続
+
+Vercelプロジェクトの Settings → Domains で `newtro.jp` を追加し、表示されるDNSレコードを設定。
+
+---
+
+## Phase 1 でカバーしている範囲
+
+- `/` トップ（カウントダウン、ブランドメッセージ、コンセプト、エピソード、コレクション、Values、Membership、Signup、Footer）
+- `/invite` 招待リンク受付の案内
+- `/invite/[token]` 招待トークン検証 → Premium Member登録フォーム
+
+## Phase 2 へ持ち越す項目
+
+- Shopify連携（EC本体）
+- Premium Memberタグ自動付与
+- マイページ（会員番号・購入履歴・招待枠）
+- 招待トークンの一回利用化（KV/DB必須）
+- Resend移行（`fujimoto@omatsuri.fun` から自動送信）
