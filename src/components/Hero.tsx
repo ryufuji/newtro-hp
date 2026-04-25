@@ -10,16 +10,17 @@ export function Hero() {
     >
       <div className="absolute inset-0 dot-grid opacity-60" aria-hidden />
 
-      <div className="relative mx-auto max-w-6xl px-5 pt-28 pb-16 sm:pt-32 sm:pb-24">
-        <p className="text-center font-bebas text-sm sm:text-base tracking-[0.4em] text-ink-soft">
+      <div className="relative pt-28 sm:pt-32 pb-16 sm:pb-24">
+        <p className="text-center font-bebas text-sm sm:text-base tracking-[0.4em] text-ink-soft px-5">
           NEW × RETRO / APPAREL FROM OMATSURI
         </p>
 
+        {/* full-bleed character marquee */}
         <div className="mt-6 sm:mt-8">
           <CharacterShowcase />
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center">
+        <div className="mt-10 sm:mt-14 text-center px-5">
           <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none">
             NewTro
           </h1>
@@ -28,14 +29,14 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-12">
+        <div className="mt-10 sm:mt-12 px-5">
           <Countdown />
           <p className="mt-5 text-center font-bebas text-base sm:text-lg tracking-[0.3em]">
             {LAUNCH_LABEL_EN}
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-12 px-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a
             href="#signup"
             className="inline-flex items-center justify-center rounded-full bg-ink text-paper px-7 py-3 text-sm font-medium tracking-wider hover:opacity-90 transition w-full sm:w-auto"

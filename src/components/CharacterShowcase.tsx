@@ -1,83 +1,67 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 const characters = [
-  { src: "/episodes/fintech.png", alt: "Fintech", label: "EP.01 / FINTECH", accent: "var(--color-fintech)" },
-  { src: "/episodes/web3.png", alt: "Web 3.0", label: "EP.02 / WEB 3.0", accent: "var(--color-web3)" },
-  { src: "/episodes/koikechan.png", alt: "Koike-chan", label: "KOIKE CHAN", accent: "#e63946" },
-  { src: "/episodes/hokusai.png", alt: "Hokusai", label: "HOKUSAI", accent: "#2563eb" },
-  { src: "/episodes/pop.png", alt: "Pop", label: "POP", accent: "var(--color-magenta)" },
-  { src: "/episodes/santa.png", alt: "Santa", label: "SANTA", accent: "#dc2626" },
-  { src: "/episodes/albatross.png", alt: "Albatross", label: "ALBATROSS", accent: "var(--color-ink)" },
+  { src: "/episodes/fintech.png", alt: "Fintech" },
+  { src: "/episodes/web3.png", alt: "Web 3.0" },
+  { src: "/episodes/koikechan.png", alt: "Koike-chan" },
+  { src: "/episodes/hokusai.png", alt: "Hokusai" },
+  { src: "/episodes/pop.png", alt: "Pop" },
+  { src: "/episodes/santa.png", alt: "Santa" },
+  { src: "/episodes/albatross.png", alt: "Albatross" },
 ];
 
-const INTERVAL_MS = 4500;
+// 同じ配列を 2 回つなげて translateX(-50%) で 1 ループぶんを継ぎ目なく繰り返す。
+const loop = [...characters, ...characters];
 
 export function CharacterShowcase() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % characters.length);
-    }, INTERVAL_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  const current = characters[index];
-
   return (
-    <div className="relative w-full max-w-2xl mx-auto">
-      <div className="relative aspect-[4/5] sm:aspect-[1/1]">
-        {characters.map((c, i) => (
+    <div
+      className="relative w-full overflow-hidden py-4 group"
+      aria-label="NewTro character parade"
+    >
+      <div
+        className="flex w-max items-center gap-10 sm:gap-16 lg:gap-20 will-change-transform"
+        style={{
+          animation: "scroll-marquee 90s linear infinite",
+          animationPlayState: "running",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLDivElement).style.animationPlayState =
+            "paused";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLDivElement).style.animationPlayState =
+            "running";
+        }}
+      >
+        {loop.map((c, i) => (
           <div
-            key={c.src}
-            aria-hidden={i !== index}
-            style={{
-              position: "absolute",
-              inset: 0,
-              opacity: i === index ? 1 : 0,
-              transition: "opacity 600ms ease-in-out",
-              pointerEvents: i === index ? "auto" : "none",
-            }}
+            key={`${c.src}-${i}`}
+            className="relative flex-none h-72 sm:h-[26rem] lg:h-[32rem] aspect-square"
           >
             <Image
               src={c.src}
               alt={c.alt}
               fill
-              priority={i < 2}
-              loading={i < 2 ? "eager" : "lazy"}
-              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 640px"
+              priority={i < 4}
+              sizes="(max-width: 640px) 288px, (max-width: 1024px) 416px, 512px"
               style={{ objectFit: "contain" }}
             />
           </div>
         ))}
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-3">
-        <span
-          className="inline-block h-3 w-3 rounded-full transition-colors"
-          style={{ background: current.accent }}
-        />
-        <p className="font-bebas tracking-[0.3em] text-sm sm:text-base text-ink">
-          {current.label}
-        </p>
-      </div>
-
-      <div className="mt-3 flex items-center justify-center gap-2">
-        {characters.map((c, i) => (
-          <button
-            key={c.src}
-            type="button"
-            onClick={() => setIndex(i)}
-            aria-label={`Show ${c.alt}`}
-            className={`h-1.5 rounded-full transition-all ${
-              i === index ? "w-8 bg-ink" : "w-1.5 bg-mute hover:bg-ink/60"
-            }`}
-          />
-        ))}
-      </div>
+      {/* edge fade for elegance */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-paper to-transparent"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-paper to-transparent"
+      />
     </div>
   );
 }
