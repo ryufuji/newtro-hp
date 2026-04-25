@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Stick, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import { StickyHeader } from "@/components/StickyHeader";
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -61,6 +62,7 @@ export default function RootLayout({
       className={`${notoSansJp.variable} ${stick.variable} ${bebas.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
+        <StickyHeader />
         {children}
       </body>
     </html>

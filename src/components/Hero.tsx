@@ -1,5 +1,5 @@
+import { CharacterShowcase } from "./CharacterShowcase";
 import { Countdown } from "./Countdown";
-import { Rocket } from "./Rocket";
 import { LAUNCH_LABEL_EN } from "@/lib/launch";
 
 export function Hero() {
@@ -9,24 +9,28 @@ export function Hero() {
       className="relative isolate overflow-hidden border-b-2 border-ink"
     >
       <div className="absolute inset-0 dot-grid opacity-60" aria-hidden />
-      <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24 lg:py-28 text-center">
-        <p className="font-bebas text-sm sm:text-base tracking-[0.4em] text-ink-soft">
+
+      <div className="relative mx-auto max-w-6xl px-5 pt-28 pb-16 sm:pt-32 sm:pb-24">
+        <p className="text-center font-bebas text-sm sm:text-base tracking-[0.4em] text-ink-soft">
           NEW × RETRO / APPAREL FROM OMATSURI
         </p>
-        <div className="mt-8 flex justify-center">
-          <Rocket className="w-32 sm:w-44" priority />
+
+        <div className="mt-6 sm:mt-8">
+          <CharacterShowcase />
         </div>
 
-        <h1 className="mt-6 font-display text-5xl sm:text-7xl lg:text-8xl leading-none">
-          NewTro
-        </h1>
-        <p className="mt-3 text-xs sm:text-sm tracking-[0.3em] text-mute">
-          BRAND LAUNCH COUNTDOWN
-        </p>
+        <div className="mt-12 sm:mt-16 text-center">
+          <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none">
+            NewTro
+          </h1>
+          <p className="mt-3 text-xs sm:text-sm tracking-[0.3em] text-mute">
+            BRAND LAUNCH COUNTDOWN
+          </p>
+        </div>
 
-        <div className="mt-10 sm:mt-14">
+        <div className="mt-10 sm:mt-12">
           <Countdown />
-          <p className="mt-5 font-bebas text-base sm:text-lg tracking-[0.3em]">
+          <p className="mt-5 text-center font-bebas text-base sm:text-lg tracking-[0.3em]">
             {LAUNCH_LABEL_EN}
           </p>
         </div>
