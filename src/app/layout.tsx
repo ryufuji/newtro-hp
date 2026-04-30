@@ -25,7 +25,7 @@ const bebas = Bebas_Neue({
 });
 
 const SITE_URL = "https://newtro.jp";
-const SITE_NAME = "NewTro";
+const SITE_NAME = "Newtique";
 const DESCRIPTION =
   "NewなモノとRetroなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.05.01 LAUNCH.";
 

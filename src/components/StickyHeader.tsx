@@ -32,9 +32,9 @@ export function StickyHeader() {
         <a
           href="#hero"
           className="font-display text-2xl sm:text-3xl leading-none"
-          aria-label="NewTro home"
+          aria-label="Newtique home"
         >
-          NewTro
+          Newtique
         </a>
 
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">

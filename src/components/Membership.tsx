@@ -35,7 +35,7 @@ export function Membership() {
           <p className="font-bebas tracking-[0.3em] text-mute">/ MEMBERSHIP</p>
         </div>
         <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
-          NewTroは2階層の会員制で運営します。すべての方は「Member」として登録可能。
+          Newtiqueは2階層の会員制で運営します。すべての方は「Member」として登録可能。
           「Premium Member」は<strong>招待制</strong>で、ドロップごとに数を絞ります。
         </p>
 

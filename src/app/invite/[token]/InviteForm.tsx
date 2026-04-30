@@ -8,7 +8,7 @@ export function InviteForm({ token }: { token: string }) {
 
   if (!hasTally) {
     const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      "NewTro Premium Member 登録希望",
+      "Newtique Premium Member 登録希望",
     )}&body=${encodeURIComponent(`Invite token: ${token}\n\nお名前:\nメールアドレス:`)}`;
     return (
       <div className="mt-10 border-2 border-ink rounded-md p-7 sm:p-8 bg-paper">
@@ -37,7 +37,7 @@ export function InviteForm({ token }: { token: string }) {
       <TallyEmbed
         formId={TALLY_INVITE_FORM_ID}
         prefill={{ token }}
-        title="NewTro Premium Member 登録"
+        title="Newtique Premium Member 登録"
         minHeight={520}
       />
     </div>

@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <Rocket className="w-10" hover={false} />
-              <p className="font-display text-3xl">NewTro</p>
+              <p className="font-display text-3xl">Newtique</p>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-paper/80">
               Newなモノと Retroなモノが共存する時代を表現するブランド。
@@ -99,7 +99,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-paper/20 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-[11px] tracking-wider text-paper/60">
-          <p>© {new Date().getFullYear()} NewTro / OMATSURI</p>
+          <p>© {new Date().getFullYear()} Newtique / OMATSURI</p>
           <p className="font-bebas tracking-[0.3em]">NEW × RETRO</p>
         </div>
       </div>

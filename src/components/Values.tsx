@@ -17,7 +17,7 @@ const values = [
   {
     n: "04",
     title: "松尾陽介のデザイン",
-    body: "彼の理解と誤読こそが、NewTroの核になる。",
+    body: "彼の理解と誤読こそが、Newtiqueの核になる。",
   },
 ];
 

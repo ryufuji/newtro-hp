@@ -42,7 +42,7 @@ export function Countdown() {
       <div className="text-center">
         <p className="font-display text-4xl sm:text-6xl">LAUNCHED</p>
         <p className="mt-3 text-sm tracking-widest text-mute">
-          NEWTRO IS NOW LIVE
+          NEWTIQUE IS NOW LIVE
         </p>
       </div>
     );

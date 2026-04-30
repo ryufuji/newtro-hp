@@ -4,7 +4,7 @@ import { isInviteTokenValid } from "@/lib/invite";
 import { InviteForm } from "./InviteForm";
 
 export const metadata = {
-  title: "Premium Member 登録 | NewTro",
+  title: "Premium Member 登録 | Newtique",
   description: "招待リンクからのPremium Member登録ページ",
   robots: { index: false, follow: false },
 };
@@ -50,7 +50,7 @@ export default async function InviteTokenPage({ params }: { params: Params }) {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="mailto:fujimoto@omatsuri.fun?subject=NewTro%20%E6%8B%9B%E5%BE%85%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+                  href="mailto:fujimoto@omatsuri.fun?subject=Newtique%20%E6%8B%9B%E5%BE%85%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
                   className="inline-flex items-center justify-center rounded-full bg-ink text-paper px-7 py-3 text-sm font-medium tracking-wider hover:opacity-90 transition"
                 >
                   運営に問い合わせる

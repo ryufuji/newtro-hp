@@ -22,7 +22,7 @@ export function Hero() {
 
         <div className="mt-10 sm:mt-14 text-center px-5">
           <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none">
-            NewTro
+            Newtique
           </h1>
           <p className="mt-3 text-xs sm:text-sm tracking-[0.3em] text-mute">
             BRAND LAUNCH COUNTDOWN

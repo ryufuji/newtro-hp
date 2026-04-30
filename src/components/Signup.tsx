@@ -25,14 +25,14 @@ export function Signup() {
           {hasTally ? (
             <TallyEmbed
               formId={TALLY_SIGNUP_FORM_ID}
-              title="NewTro Founding Member 登録"
+              title="Newtique Founding Member 登録"
               minHeight={280}
             />
           ) : (
             <FallbackNotice
               note="メール登録フォームは準備中です。下記までご一報ください。"
               email={CONTACT_EMAIL}
-              subject="NewTro Founding Member 登録希望"
+              subject="Newtique Founding Member 登録希望"
             />
           )}
         </div>

@@ -1,4 +1,4 @@
-# NewTro — Pre-Launch Site
+# Newtique — Pre-Launch Site
 
 NewなモノとRetroなモノが共存する時代を表現するアパレルブランド。
 Phase 1（カウントダウンサイト）の実装。

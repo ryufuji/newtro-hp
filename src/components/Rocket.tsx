@@ -16,11 +16,11 @@ export function Rocket({ className = "", hover = true, priority = false }: Props
         aspectRatio: "1000 / 1476",
         position: "relative",
       }}
-      aria-label="NewTro rocket"
+      aria-label="Newtique rocket"
     >
       <Image
         src="/rocket.png"
-        alt="NewTro rocket"
+        alt="Newtique rocket"
         fill
         priority={priority}
         sizes="(max-width: 640px) 50vw, 280px"

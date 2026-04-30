@@ -19,7 +19,7 @@ export function CharacterShowcase() {
   return (
     <div
       className="relative w-full overflow-hidden py-4 group"
-      aria-label="NewTro character parade"
+      aria-label="Newtique character parade"
     >
       <div
         className="flex w-max items-center gap-10 sm:gap-16 lg:gap-20 will-change-transform"

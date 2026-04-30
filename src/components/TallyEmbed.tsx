@@ -22,7 +22,7 @@ export function TallyEmbed({
   formId,
   prefill,
   className = "",
-  title = "NewTro form",
+  title = "Newtique form",
   minHeight = 320,
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
