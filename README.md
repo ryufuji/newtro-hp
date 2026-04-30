@@ -1,6 +1,6 @@
 # Newtique — Pre-Launch Site
 
-NewなモノとRetroなモノが共存する時代を表現するアパレルブランド。
+NewなモノとAntiqueなモノが共存する時代を表現するアパレルブランド。
 Phase 1（カウントダウンサイト）の実装。
 
 - Launch: **2026-05-01 12:00 JST**

@@ -27,12 +27,12 @@ const bebas = Bebas_Neue({
 const SITE_URL = "https://newtro.jp";
 const SITE_NAME = "Newtique";
 const DESCRIPTION =
-  "NewなモノとRetroなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.05.01 LAUNCH.";
+  "NewなモノとAntiqueなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.05.01 LAUNCH.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — New × Retro Apparel Brand`,
+    default: `${SITE_NAME} — New × Antique Apparel Brand`,
     template: `%s | ${SITE_NAME}`,
   },
   description: DESCRIPTION,

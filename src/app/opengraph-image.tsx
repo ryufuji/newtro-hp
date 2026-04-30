@@ -65,7 +65,7 @@ export default async function Image() {
                 color: "#2a2a2a",
               }}
             >
-              NEW × RETRO
+              NEW × ANTIQUE
             </div>
             <div
               style={{

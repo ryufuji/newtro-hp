@@ -18,7 +18,7 @@ export function BrandMessage() {
             それぞれの立ち位置が決まらないうちにまた新たなモノが生まれるというサイクルを繰り返している。
           </p>
           <p className="text-fintech">
-            Newなモノと Retroなモノが共存する時代を表現するブランド、はじめました。
+            Newなモノと Antiqueなモノが共存する時代を表現するブランド、はじめました。
           </p>
         </div>
       </div>

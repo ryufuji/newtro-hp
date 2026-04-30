@@ -12,7 +12,7 @@ export function Hero() {
 
       <div className="relative pt-28 sm:pt-32 pb-16 sm:pb-24">
         <p className="text-center font-bebas text-sm sm:text-base tracking-[0.4em] text-ink-soft px-5">
-          NEW × RETRO / APPAREL FROM OMATSURI
+          NEW × ANTIQUE / APPAREL FROM OMATSURI
         </p>
 
         {/* full-bleed character marquee */}
