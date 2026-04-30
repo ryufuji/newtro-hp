@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { INSTAGRAM_URL } from "@/lib/env";
 
@@ -31,10 +32,18 @@ export function StickyHeader() {
       <div className="mx-auto max-w-6xl px-4 sm:px-5 h-14 sm:h-16 flex items-center justify-between gap-3">
         <a
           href="#hero"
-          className="font-display text-2xl sm:text-3xl leading-none"
+          className="flex items-center"
           aria-label="Newtique home"
         >
-          Newtique
+          <Image
+            src="/logo-header.png"
+            alt="Newtique"
+            width={988}
+            height={280}
+            priority
+            className="h-9 sm:h-11 w-auto"
+            sizes="(max-width: 640px) 160px, 220px"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
