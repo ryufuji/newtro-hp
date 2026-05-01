@@ -1,11 +1,26 @@
-const tiers = [
+type Item = {
+  name: string;
+  price: string | null;
+  status?: string | null;
+};
+
+type Tier = {
+  label: string;
+  sub: string;
+  badge: string | null;
+  items: Item[];
+  note: string;
+  locked: boolean;
+};
+
+const tiers: Tier[] = [
   {
-    label: "LIGHT",
+    label: "一般ライン",
     sub: "オープン",
-    badge: null as string | null,
+    badge: null,
     items: [
-      { name: "T-SHIRT", price: "¥5,000" },
-      { name: "HOODIE", price: "¥10,000" },
+      { name: "T-SHIRT", price: "¥6,500" },
+      { name: "HOODIE", price: null, status: "COMING SOON" },
     ],
     note: "白・黒は通常販売。カラーは限定50着のみ。",
     locked: false,
@@ -15,8 +30,8 @@ const tiers = [
     sub: "招待制",
     badge: "BY INVITATION ONLY",
     items: [
-      { name: "T-SHIRT", price: "¥15,000" },
-      { name: "HOODIE", price: "¥25,000" },
+      { name: "T-SHIRT", price: null },
+      { name: "HOODIE", price: null, status: "COMING SOON" },
     ],
     note: "Premium Memberのみ購入可能。限定30着、売切終了。",
     locked: true,
@@ -74,8 +89,16 @@ export function Collection() {
                     <span className="font-bebas tracking-[0.2em] text-sm">
                       {it.name}
                     </span>
-                    <span className="font-bebas tracking-[0.05em]">
-                      {it.price}
+                    <span
+                      className={`font-bebas tracking-[0.05em] ${
+                        it.status
+                          ? tier.locked
+                            ? "text-paper/60"
+                            : "text-ink-soft/70"
+                          : ""
+                      }`}
+                    >
+                      {it.price ?? it.status ?? "—"}
                     </span>
                   </li>
                 ))}
@@ -91,7 +114,10 @@ export function Collection() {
 
               {tier.locked && (
                 <p className="mt-6 text-[11px] tracking-[0.2em] text-paper/60">
-                  * 招待リンクをお持ちの方は <a href="/invite" className="underline">こちら</a>
+                  * 招待リンクをお持ちの方は{" "}
+                  <a href="/invite" className="underline">
+                    こちら
+                  </a>
                 </p>
               )}
             </article>
