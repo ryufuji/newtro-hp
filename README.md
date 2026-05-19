@@ -3,7 +3,7 @@
 NewなモノとAntiqueなモノが共存する時代を表現するアパレルブランド。
 Phase 1（カウントダウンサイト）の実装。
 
-- Launch: **2026-05-01 12:00 JST**
+- Launch: **2026-06-01 12:00 JST**
 - Stack: Next.js 16 (App Router) / TypeScript / Tailwind CSS v4
 - Hosting: Vercel
 - Forms: Tally (iframe embed)

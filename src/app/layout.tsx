@@ -27,7 +27,7 @@ const bebas = Bebas_Neue({
 const SITE_URL = "https://newtro.jp";
 const SITE_NAME = "Newtique";
 const DESCRIPTION =
-  "NewなモノとAntiqueなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.05.01 LAUNCH.";
+  "NewなモノとAntiqueなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.06.01 LAUNCH.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   openGraph: {
-    title: `${SITE_NAME} — Launching 2026.05.01`,
+    title: `${SITE_NAME} — Launching 2026.06.01`,
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Launching 2026.05.01`,
+    title: `${SITE_NAME} — Launching 2026.06.01`,
     description: DESCRIPTION,
   },
 };

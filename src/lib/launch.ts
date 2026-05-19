@@ -1,8 +1,8 @@
-// 2026-05-01 12:00 JST = 2026-05-01T03:00:00Z
-export const LAUNCH_AT = new Date("2026-05-01T03:00:00.000Z");
+// 2026-06-01 12:00 JST = 2026-06-01T03:00:00Z
+export const LAUNCH_AT = new Date("2026-06-01T03:00:00.000Z");
 
-export const LAUNCH_LABEL_JP = "2026.05.01 12:00 JST";
-export const LAUNCH_LABEL_EN = "MAY 01, 2026 / 12:00 JST";
+export const LAUNCH_LABEL_JP = "2026.06.01 12:00 JST";
+export const LAUNCH_LABEL_EN = "JUN 01, 2026 / 12:00 JST";
 
 export type Remaining = {
   days: number;

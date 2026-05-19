@@ -30,7 +30,7 @@ export default async function InviteTokenPage({ params }: { params: Params }) {
               </h1>
               <p className="mt-6 text-sm sm:text-base leading-relaxed text-ink-soft">
                 招待リンクを確認しました。以下の情報を登録すると
-                Premium Memberとしてサインアップが完了し、5/1のローンチ後に
+                Premium Memberとしてサインアップが完了し、6/1のローンチ後に
                 Premium商品の購入が可能になります。
               </p>
               <div className="mt-3 inline-block border-2 border-ink rounded-md px-3 py-1 font-bebas text-xs tracking-[0.2em]">
