@@ -12,6 +12,6 @@ export const INSTAGRAM_URL =
   "https://instagram.com/";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://newtro.jp";
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://newtique.jp";
 
 export const CONTACT_EMAIL = "fujimoto@omatsuri.fun";

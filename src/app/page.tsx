@@ -1,4 +1,5 @@
 import { BrandMessage } from "@/components/BrandMessage";
+import { Collaborations } from "@/components/Collaborations";
 import { Collection } from "@/components/Collection";
 import { Concept } from "@/components/Concept";
 import { Episodes } from "@/components/Episodes";
@@ -18,6 +19,7 @@ export default function Home() {
       <Concept />
       <Episodes />
       <Collection />
+      <Collaborations />
       <Values />
       <Membership />
       <Signup />

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { LAUNCH_LABEL_EN } from "@/lib/launch";
 
 export const runtime = "edge";
-export const alt = "Newtique — Launching 2026.06.01";
+export const alt = "Newtique — Launching 2026.07.01";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
