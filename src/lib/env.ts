@@ -11,6 +11,9 @@ export const INSTAGRAM_URL =
   process.env.NEXT_PUBLIC_INSTAGRAM_URL?.trim() ||
   "https://instagram.com/";
 
+export const LINE_FRIEND_URL =
+  process.env.NEXT_PUBLIC_LINE_FRIEND_URL?.trim() || "";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://newtique.jp";
 

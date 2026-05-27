@@ -1,11 +1,12 @@
 import { LAUNCH_LABEL_EN } from "@/lib/launch";
 
 const items = [
-  "NEW × ANTIQUE",
+  "NEWTIQUE",
   LAUNCH_LABEL_EN,
-  "BY OMATSURI",
+  "EST. 2026",
   "EPISODE 01 / FINTECH",
   "EPISODE 02 / WEB 3.0",
+  "BY OMATSURI",
   "PREMIUM BY INVITATION ONLY",
 ];
 

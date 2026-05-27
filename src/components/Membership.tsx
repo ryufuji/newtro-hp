@@ -1,13 +1,13 @@
 const tiers = [
   {
     name: "MEMBER",
-    sub: "メールで登録、誰でも",
+    sub: "公式LINEで登録、誰でも",
     bullets: [
       "一般ライン全色を購入可能（限定カラー含む）",
       "新エピソード・ドロップを先行通知",
       "登録順に若い会員番号を付与（タグ番号と連動）",
     ],
-    cta: { label: "FOUNDING MEMBERに登録", href: "#signup" },
+    cta: { label: "公式LINEで登録", href: "#signup" },
     open: true,
   },
   {
@@ -35,8 +35,8 @@ export function Membership() {
           <p className="font-bebas tracking-[0.3em] text-mute">/ MEMBERSHIP</p>
         </div>
         <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
-          Newtiqueは2階層の会員制で運営します。すべての方は「Member」として登録可能。
-          「Premium Member」は<strong>招待制</strong>で、ドロップごとに数を絞ります。
+          2階層の会員制。誰でも「Member」になれます。
+          「Premium Member」は<strong>招待制</strong>。
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">

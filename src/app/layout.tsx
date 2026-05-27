@@ -27,7 +27,7 @@ const bebas = Bebas_Neue({
 const SITE_URL = "https://newtique.jp";
 const SITE_NAME = "Newtique";
 const DESCRIPTION =
-  "NewなモノとAntiqueなモノが共存する時代を表現するブランド、はじめました。Produced by OMATSURI. 2026.07.01 LAUNCH.";
+  "Apparel by OMATSURI. 2026.07.01 LAUNCH.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
