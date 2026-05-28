@@ -2,39 +2,19 @@ type Item = {
   name: string;
   price: string | null;
   status?: string | null;
+  note?: string;
 };
 
-type Tier = {
-  label: string;
-  sub: string;
-  badge: string | null;
-  items: Item[];
-  note: string;
-  locked: boolean;
-};
-
-const tiers: Tier[] = [
+const items: Item[] = [
   {
-    label: "一般ライン",
-    sub: "オープン",
-    badge: null,
-    items: [
-      { name: "T-SHIRT", price: "¥6,500" },
-      { name: "HOODIE", price: null, status: "COMING SOON" },
-    ],
-    note: "白・黒は通常販売。カラーは限定50着のみ。",
-    locked: false,
+    name: "T-SHIRT",
+    price: "¥6,500",
+    note: "白・黒は通常販売 / カラーは限定50着",
   },
   {
-    label: "PREMIUM",
-    sub: "招待制",
-    badge: "BY INVITATION ONLY",
-    items: [
-      { name: "T-SHIRT", price: null },
-      { name: "HOODIE", price: null, status: "COMING SOON" },
-    ],
-    note: "Premium Memberのみ購入可能。限定30着、売切終了。",
-    locked: true,
+    name: "HOODIE",
+    price: null,
+    status: "COMING SOON",
   },
 ];
 
@@ -49,80 +29,36 @@ export function Collection() {
           <h2 className="font-display text-4xl sm:text-6xl">コレクション</h2>
           <p className="font-bebas tracking-[0.3em] text-mute">/ COLLECTION</p>
         </div>
-        <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-mute">
-          初期ラインナップはT-SHIRTとHOODIEの2型。すべてのアイテムにシリアルナンバー入りタグが付きます。
+        <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-paper/80">
+          すべてのアイテムにシリアルナンバー入りタグが付きます。
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {tiers.map((tier) => (
-            <article
-              key={tier.label}
-              className={`relative border-2 rounded-md p-7 sm:p-8 ${
-                tier.locked
-                  ? "border-paper/30 bg-paper/5"
-                  : "border-paper bg-paper text-ink"
-              }`}
+        <ul className="mt-12 divide-y-2 divide-paper/30 border-y-2 border-paper/30">
+          {items.map((it) => (
+            <li
+              key={it.name}
+              className="flex items-baseline justify-between gap-4 py-5 sm:py-6"
             >
-              <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                <h3 className="font-display text-3xl sm:text-4xl">
-                  {tier.label}
-                </h3>
-                <p className="font-bebas tracking-[0.2em] text-xs">
-                  {tier.sub}
-                </p>
+              <div>
+                <span className="font-bebas text-2xl sm:text-3xl tracking-[0.15em]">
+                  {it.name}
+                </span>
+                {it.note && (
+                  <p className="mt-1 text-xs sm:text-sm text-paper/70">
+                    {it.note}
+                  </p>
+                )}
               </div>
-
-              {tier.badge && (
-                <p className="mt-3 inline-block border border-paper px-2 py-1 font-bebas text-[11px] tracking-[0.3em]">
-                  {tier.badge}
-                </p>
-              )}
-
-              <ul className="mt-6 space-y-3">
-                {tier.items.map((it) => (
-                  <li
-                    key={it.name}
-                    className={`flex justify-between border-b border-dashed pb-2 ${
-                      tier.locked ? "border-paper/20" : "border-ink/30"
-                    }`}
-                  >
-                    <span className="font-bebas tracking-[0.2em] text-sm">
-                      {it.name}
-                    </span>
-                    <span
-                      className={`font-bebas tracking-[0.05em] ${
-                        it.status
-                          ? tier.locked
-                            ? "text-paper/60"
-                            : "text-ink-soft/70"
-                          : ""
-                      }`}
-                    >
-                      {it.price ?? it.status ?? "—"}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p
-                className={`mt-6 text-xs sm:text-sm leading-relaxed ${
-                  tier.locked ? "text-paper/70" : "text-ink-soft"
+              <span
+                className={`font-bebas text-xl sm:text-2xl tracking-[0.05em] ${
+                  it.status ? "text-paper/60" : ""
                 }`}
               >
-                {tier.note}
-              </p>
-
-              {tier.locked && (
-                <p className="mt-6 text-[11px] tracking-[0.2em] text-paper/60">
-                  * 招待リンクをお持ちの方は{" "}
-                  <a href="/invite" className="underline">
-                    こちら
-                  </a>
-                </p>
-              )}
-            </article>
+                {it.price ?? it.status ?? "—"}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
