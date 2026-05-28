@@ -8,7 +8,7 @@ const NAV = [
   { label: "Story", href: "#story" },
   { label: "Archive", href: "#archive" },
   { label: "Collab", href: "#collaborations" },
-  { label: "Membership", href: "#membership" },
+  { label: "Values", href: "#values" },
 ];
 
 export function StickyHeader() {

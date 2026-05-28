@@ -9,8 +9,8 @@ export function Signup() {
   return (
     <section id="signup" className="relative">
       <SectionBar
-        index="06"
-        title="FOUNDING MEMBER — 発射通知を受け取る"
+        index="05"
+        title="JOIN — 発射通知を受け取る"
         hint="JOIN_LINE.SH // OFFICIAL CHANNEL"
       />
       <div
@@ -22,8 +22,7 @@ export function Signup() {
             発射通知を受け取る
           </h2>
           <p className="mt-5 text-sm sm:text-base leading-relaxed text-ink/90">
-            公式LINEを友だち追加すると、ローンチ通知＋若い会員番号が届きます。
-            先着順に <span className="font-bebas">#001</span> から付番。
+            公式LINEを友だち追加すると、ローンチ通知と新作の発表が届きます。
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4">
@@ -42,7 +41,7 @@ export function Signup() {
               <FallbackNotice
                 note="公式LINEは準備中です。リリース次第こちらに掲載します。一足先に通知を受けたい場合は下記まで一報ください。"
                 email={CONTACT_EMAIL}
-                subject="Newtique Founding Member 登録希望"
+                subject="Newtique 発射通知 登録希望"
               />
             )}
 

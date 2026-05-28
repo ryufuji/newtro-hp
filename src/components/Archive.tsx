@@ -38,26 +38,6 @@ const works: Work[] = [
     edition: "T-SHIRT / ¥6,500",
     status: "available",
   },
-  {
-    no: "ARC.???",
-    year: "TBA",
-    title: "Untitled / 04",
-    keyword: "??? / ???",
-    image: "/episodes/pop.png",
-    caption: "未来のキーワードはまだ届いていない。",
-    accent: "var(--color-magenta)",
-    status: "concept",
-  },
-  {
-    no: "ARC.???",
-    year: "TBA",
-    title: "Untitled / 05",
-    keyword: "??? / ???",
-    image: "/episodes/albatross.png",
-    caption: "次の時代の言葉が、次の女の子になる。",
-    accent: "var(--color-ink)",
-    status: "concept",
-  },
 ];
 
 const STATUS_LABEL = {

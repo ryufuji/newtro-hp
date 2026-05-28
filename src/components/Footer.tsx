@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative bg-ink text-paper">
       <SectionBar
-        index="07"
+        index="06"
         title="FOOTER · CONTACT"
         hint={`_FOOTER.SYS // LAUNCH ${LAUNCH_LABEL_JP}`}
       />
@@ -52,8 +52,8 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="hover:underline" href="#membership">
-                    Membership
+                  <a className="hover:underline" href="#values">
+                    Values
                   </a>
                 </li>
                 <li>
@@ -87,11 +87,6 @@ export function Footer() {
                     href={`mailto:${CONTACT_EMAIL}`}
                   >
                     {CONTACT_EMAIL}
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="/invite">
-                    招待リンクをお持ちの方
                   </a>
                 </li>
               </ul>
