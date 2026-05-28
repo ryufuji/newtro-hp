@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Stick, Bebas_Neue, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { BootLoader } from "@/components/BootLoader";
 import { StatusBar } from "@/components/StatusBar";
 import { StickyHeader } from "@/components/StickyHeader";
 import { SystemPopup } from "@/components/SystemPopup";
@@ -71,6 +72,7 @@ export default function RootLayout({
       className={`${notoSansJp.variable} ${stick.variable} ${bebas.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="crt-global min-h-full flex flex-col bg-paper text-ink pb-8">
+        <BootLoader />
         <StickyHeader />
         {children}
         <StatusBar />
