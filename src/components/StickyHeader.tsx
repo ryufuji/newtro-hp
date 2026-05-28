@@ -25,10 +25,34 @@ export function StickyHeader() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-paper/85 backdrop-blur-md border-b-2 border-ink shadow-sm"
-          : "bg-transparent"
+          ? "bg-paper/95 backdrop-blur-md border-b-2 border-ink shadow-sm"
+          : "bg-paper/70 backdrop-blur-sm border-b border-ink/40"
       }`}
     >
+      {/* fake browser chrome top strip */}
+      <div className="border-b border-ink/30 bg-ink/5">
+        <div className="mx-auto max-w-6xl px-3 sm:px-5 h-7 sm:h-8 flex items-center gap-3">
+          <div className="win-dots">
+            <span style={{ background: "#ff5f56" }} />
+            <span style={{ background: "#ffbd2e" }} />
+            <span style={{ background: "#27c93f" }} />
+          </div>
+          <div className="hidden sm:flex items-center gap-1 text-[10px] font-bebas tracking-[0.2em] text-ink/50">
+            <span>◀</span>
+            <span>▶</span>
+            <span className="ml-1">⟳</span>
+          </div>
+          <div className="flex-1 mx-2 sm:mx-3 h-4 sm:h-5 px-2 rounded-sm bg-paper border border-ink/30 flex items-center font-bebas text-[9px] sm:text-[10px] tracking-[0.15em] text-ink/70 truncate">
+            <span className="opacity-50 mr-1">🔒</span>
+            https://newtique.jp/
+          </div>
+          <span className="hidden sm:inline font-bebas text-[10px] tracking-[0.2em] text-ink/50">
+            ⋯
+          </span>
+        </div>
+      </div>
+
+      {/* main nav */}
       <div className="mx-auto max-w-6xl px-4 sm:px-5 h-14 sm:h-16 flex items-center justify-between gap-3">
         <a
           href="#hero"
