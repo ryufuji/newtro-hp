@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Stick, Bebas_Neue, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { StatusBar } from "@/components/StatusBar";
 import { StickyHeader } from "@/components/StickyHeader";
 
 const notoSansJp = Noto_Sans_JP({
@@ -68,9 +69,10 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJp.variable} ${stick.variable} ${bebas.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">
+      <body className="crt-global min-h-full flex flex-col bg-paper text-ink pb-8">
         <StickyHeader />
         {children}
+        <StatusBar />
       </body>
     </html>
   );

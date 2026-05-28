@@ -82,6 +82,14 @@ body {
   );
   background-size: 18px 18px;
 }
+.dot-grid-dark {
+  background-image: radial-gradient(
+    circle,
+    rgba(250, 250, 250, 0.10) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
 
 /* CRT scanlines overlay */
 .scanlines {
@@ -209,4 +217,97 @@ body {
   font-size: 11px;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+/* Inline section header — looks like a window titlebar without the box */
+.section-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 8px 14px;
+  font-family: var(--font-bebas);
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-top: 2px solid var(--color-ink);
+  border-bottom: 2px solid var(--color-ink);
+}
+.section-bar .dots {
+  display: flex;
+  gap: 6px;
+}
+.section-bar .dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--color-paper);
+}
+
+/* Body-level CRT overlay — affects whole site */
+.crt-global::before,
+.crt-global::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+}
+.crt-global::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(10, 10, 10, 0.05) 2px,
+    rgba(10, 10, 10, 0.05) 3px
+  );
+  mix-blend-mode: multiply;
+}
+.crt-global::after {
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Fixed bottom OS-style status bar */
+.statusbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-top: 2px solid var(--color-ink);
+  font-family: var(--font-bebas);
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.statusbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.statusbar-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  border-right: 1px solid var(--color-paper);
+  white-space: nowrap;
+}
+.statusbar-cell:first-child { padding-left: 0; }
+.statusbar-cell:last-child { border-right: 0; }
+.statusbar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27c93f;
+  box-shadow: 0 0 6px #27c93f;
 }

@@ -1,4 +1,4 @@
-import { WinFrame } from "./WinFrame";
+import { SectionBar } from "./SectionBar";
 
 const tiers = [
   {
@@ -27,71 +27,61 @@ const tiers = [
 
 export function Membership() {
   return (
-    <section
-      id="membership"
-      className="border-b-2 border-ink py-20 sm:py-28 bg-paper relative isolate"
-    >
-      <div className="absolute inset-0 dot-grid opacity-30" aria-hidden />
+    <section id="membership" className="relative bg-paper">
+      <SectionBar
+        index="05"
+        title="MEMBERSHIP — 会員制度"
+        hint="MEMBERSHIP.DAT // 2 TIERS"
+      />
+      <div className="relative dot-grid noise px-5 sm:px-10 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl relative z-10">
+          <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
+            2階層の会員制。誰でも「Member」になれます。
+            「Premium Member」は<strong>招待制</strong>。
+          </p>
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <WinFrame title="MEMBERSHIP.DAT" hint="// 2 TIERS">
-          <div className="px-5 sm:px-8 py-10 sm:py-14">
-            <div className="flex items-baseline justify-between gap-6 flex-wrap">
-              <h2 className="font-display text-4xl sm:text-6xl">会員制度</h2>
-              <p className="font-bebas tracking-[0.3em] text-mute">
-                / MEMBERSHIP
-              </p>
-            </div>
-            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
-              2階層の会員制。誰でも「Member」になれます。
-              「Premium Member」は<strong>招待制</strong>。
-            </p>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {tiers.map((t) => (
-                <article
-                  key={t.name}
-                  className={`relative border-2 rounded-md p-7 sm:p-8 ${
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {tiers.map((t) => (
+              <article
+                key={t.name}
+                className={`relative border-2 rounded-md p-7 sm:p-8 ${
+                  t.open
+                    ? "border-ink bg-paper"
+                    : "border-ink bg-ink text-paper"
+                }`}
+              >
+                <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                  <h3 className="font-display text-2xl sm:text-3xl">
+                    {t.name}
+                  </h3>
+                  <p className="font-bebas tracking-[0.2em] text-xs">{t.sub}</p>
+                </div>
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed">
+                  {t.bullets.map((b) => (
+                    <li key={b} className="flex gap-3">
+                      <span
+                        className={`mt-[7px] inline-block h-1.5 w-1.5 flex-none rounded-full ${
+                          t.open ? "bg-ink" : "bg-paper"
+                        }`}
+                      />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={t.cta.href}
+                  className={`mt-7 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wider transition ${
                     t.open
-                      ? "border-ink bg-paper"
-                      : "border-ink bg-ink text-paper"
+                      ? "bg-ink text-paper hover:opacity-90"
+                      : "border border-paper hover:bg-paper hover:text-ink"
                   }`}
                 >
-                  <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                    <h3 className="font-display text-2xl sm:text-3xl">
-                      {t.name}
-                    </h3>
-                    <p className="font-bebas tracking-[0.2em] text-xs">
-                      {t.sub}
-                    </p>
-                  </div>
-                  <ul className="mt-6 space-y-3 text-sm leading-relaxed">
-                    {t.bullets.map((b) => (
-                      <li key={b} className="flex gap-3">
-                        <span
-                          className={`mt-[7px] inline-block h-1.5 w-1.5 flex-none rounded-full ${
-                            t.open ? "bg-ink" : "bg-paper"
-                          }`}
-                        />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={t.cta.href}
-                    className={`mt-7 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wider transition ${
-                      t.open
-                        ? "bg-ink text-paper hover:opacity-90"
-                        : "border border-paper hover:bg-paper hover:text-ink"
-                    }`}
-                  >
-                    {t.cta.label} →
-                  </a>
-                </article>
-              ))}
-            </div>
+                  {t.cta.label} →
+                </a>
+              </article>
+            ))}
           </div>
-        </WinFrame>
+        </div>
       </div>
     </section>
   );

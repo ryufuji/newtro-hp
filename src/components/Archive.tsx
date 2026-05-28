@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WinFrame } from "./WinFrame";
+import { SectionBar } from "./SectionBar";
 
 type Work = {
   no: string;
@@ -68,106 +68,98 @@ const STATUS_LABEL = {
 
 export function Archive() {
   return (
-    <section
-      id="archive"
-      className="border-b-2 border-ink py-20 sm:py-28 bg-paper relative isolate"
-    >
-      <div className="absolute inset-0 dot-grid opacity-30" aria-hidden />
+    <section id="archive" className="relative bg-paper">
+      <SectionBar
+        index="02"
+        title="ARCHIVE — 作品アーカイブ"
+        hint={`ARCHIVE.DB // ${works.length} WORKS`}
+      />
+      <div className="relative dot-grid noise px-5 sm:px-10 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl relative z-10">
+          <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
+            時代のキーワードを「女の子」として記録していくシリーズ。
+            すべての作品にシリアルナンバー入りタグが付きます。
+          </p>
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <WinFrame title="ARCHIVE.DB" hint={`// ${works.length} WORKS`}>
-          <div className="px-5 sm:px-8 py-10 sm:py-14">
-            <div className="flex items-baseline justify-between gap-6 flex-wrap">
-              <h2 className="font-display text-4xl sm:text-6xl">
-                作品アーカイブ
-              </h2>
-              <p className="font-bebas tracking-[0.3em] text-mute">/ ARCHIVE</p>
-            </div>
-            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
-              時代のキーワードを「女の子」として記録していくシリーズ。
-              すべての作品にシリアルナンバー入りタグが付きます。
-            </p>
-
-            <div className="mt-10 grid gap-8 md:grid-cols-2">
-              {works.map((w) => (
-                <article
-                  key={w.no + w.title}
-                  className="group win-frame overflow-hidden"
-                >
-                  <div className="win-titlebar">
-                    <div className="win-dots">
-                      <span style={{ background: w.accent }} />
-                      <span style={{ background: w.accent, opacity: 0.6 }} />
-                      <span style={{ background: w.accent, opacity: 0.3 }} />
-                    </div>
-                    <span>
-                      {w.no} / {w.year}
-                    </span>
-                    <span className="ml-auto opacity-70">// {w.keyword}</span>
-                  </div>
-
-                  <div
-                    className="relative aspect-[4/5] overflow-hidden border-b-2 border-ink scanlines"
-                    style={{ background: w.accent }}
-                  >
-                    <Image
-                      src={w.image}
-                      alt={w.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      style={{
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        filter:
-                          w.status === "concept"
-                            ? "grayscale(1) blur(6px) opacity(0.55)"
-                            : undefined,
-                      }}
-                    />
-                    {w.status === "concept" && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="font-display text-5xl sm:text-7xl text-ink/80 tracking-widest">
-                          ???
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-6 sm:p-7">
-                    <div className="flex items-baseline justify-between gap-3">
-                      <h3 className="font-wordmark text-3xl sm:text-4xl leading-none">
-                        {w.title}
-                      </h3>
-                      <p className="font-bebas text-xs tracking-[0.3em] text-mute whitespace-nowrap">
-                        {STATUS_LABEL[w.status]}
-                      </p>
-                    </div>
-                    <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-                      {w.caption}
-                    </p>
-                    {w.edition && (
-                      <p className="mt-5 font-bebas text-xs tracking-[0.3em] text-ink border-t-2 border-ink/20 pt-4">
-                        EDITION · {w.edition}
-                      </p>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <p className="mt-10 text-center text-xs tracking-[0.2em] text-mute">
-              NEXT WORK TBA — STAY TUNED ON{" "}
-              <a
-                href="https://www.instagram.com/newtro8/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-ink"
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {works.map((w) => (
+              <article
+                key={w.no + w.title}
+                className="group win-frame overflow-hidden"
               >
-                INSTAGRAM
-              </a>
-            </p>
+                <div className="win-titlebar">
+                  <div className="win-dots">
+                    <span style={{ background: w.accent }} />
+                    <span style={{ background: w.accent, opacity: 0.6 }} />
+                    <span style={{ background: w.accent, opacity: 0.3 }} />
+                  </div>
+                  <span>
+                    {w.no} / {w.year}
+                  </span>
+                  <span className="ml-auto opacity-70">// {w.keyword}</span>
+                </div>
+
+                <div
+                  className="relative aspect-[4/5] overflow-hidden border-b-2 border-ink scanlines"
+                  style={{ background: w.accent }}
+                >
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                      filter:
+                        w.status === "concept"
+                          ? "grayscale(1) blur(6px) opacity(0.55)"
+                          : undefined,
+                    }}
+                  />
+                  {w.status === "concept" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="font-display text-5xl sm:text-7xl text-ink/80 tracking-widest">
+                        ???
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-6 sm:p-7">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="font-wordmark text-3xl sm:text-4xl leading-none">
+                      {w.title}
+                    </h3>
+                    <p className="font-bebas text-xs tracking-[0.3em] text-mute whitespace-nowrap">
+                      {STATUS_LABEL[w.status]}
+                    </p>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                    {w.caption}
+                  </p>
+                  {w.edition && (
+                    <p className="mt-5 font-bebas text-xs tracking-[0.3em] text-ink border-t-2 border-ink/20 pt-4">
+                      EDITION · {w.edition}
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
-        </WinFrame>
+
+          <p className="mt-10 text-center text-xs tracking-[0.2em] text-mute">
+            NEXT WORK TBA — STAY TUNED ON{" "}
+            <a
+              href="https://www.instagram.com/newtro8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-ink"
+            >
+              INSTAGRAM
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
