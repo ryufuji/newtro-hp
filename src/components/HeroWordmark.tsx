@@ -5,7 +5,7 @@ import { useInView } from "@/lib/useInView";
 export function HeroWordmark() {
   const { ref, inView } = useInView<HTMLHeadingElement>({
     threshold: 0.4,
-    once: false,
+    once: true,
   });
 
   return (
