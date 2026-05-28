@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Stick, Bebas_Neue } from "next/font/google";
+import { Noto_Sans_JP, Stick, Bebas_Neue, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
 
@@ -21,6 +21,13 @@ const bebas = Bebas_Neue({
   variable: "--font-bebas",
   subsets: ["latin"],
   weight: ["400"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["900"],
   display: "swap",
 });
 
@@ -59,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${notoSansJp.variable} ${stick.variable} ${bebas.variable} h-full antialiased`}
+      className={`${notoSansJp.variable} ${stick.variable} ${bebas.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <StickyHeader />

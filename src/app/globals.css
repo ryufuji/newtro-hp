@@ -15,6 +15,7 @@
   --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
   --font-display: var(--font-stick), var(--font-noto-sans-jp), sans-serif;
   --font-bebas: var(--font-bebas), Impact, sans-serif;
+  --font-wordmark: var(--font-playfair), Georgia, serif;
 }
 
 :root {
@@ -65,6 +66,12 @@ body {
 .font-bebas {
   font-family: var(--font-bebas);
   letter-spacing: 0.04em;
+}
+
+.font-wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .dot-grid {

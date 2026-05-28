@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <Rocket className="w-10" hover={false} />
-              <p className="font-display text-3xl">Newtique</p>
+              <p className="font-wordmark text-3xl">Newtique</p>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-paper/70">
               Produced by OMATSURI.
