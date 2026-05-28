@@ -206,6 +206,67 @@ body {
 }
 .crt-flicker { animation: crt-flicker 6s infinite; }
 
+/* reveal-on-scroll: rise + fade */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CRT power-on flash when a section enters view */
+@keyframes crt-power-on {
+  0% { transform: scaleY(0.004) scaleX(1); filter: brightness(4); opacity: 0; }
+  18% { transform: scaleY(0.02) scaleX(1.02); filter: brightness(3); opacity: 1; }
+  40% { transform: scaleY(1) scaleX(1); filter: brightness(1.4); }
+  100% { transform: scaleY(1) scaleX(1); filter: brightness(1); }
+}
+.crt-on {
+  animation: crt-power-on 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transform-origin: center;
+}
+
+/* blinking caret for typing effect */
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret::after {
+  content: "_";
+  margin-left: 1px;
+  animation: caret-blink 0.9s steps(1) infinite;
+}
+
+/* one-shot glitch burst (triggered on scroll-in) */
+@keyframes glitch-burst {
+  0% { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+  10% { clip-path: inset(20% 0 60% 0); transform: translate(-6px, 0); }
+  20% { clip-path: inset(70% 0 5% 0); transform: translate(6px, 0); }
+  30% { clip-path: inset(40% 0 40% 0); transform: translate(-4px, 0); }
+  40% { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+}
+.glitch-burst { animation: glitch-burst 0.5s steps(2, jump-end) 1; }
+
+/* system error / bluescreen flash */
+@keyframes sys-flash {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  10% { opacity: 1; }
+  14% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* file-opening progress bar */
+@keyframes load-bar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
 /* keyword cloud word */
 .kw {
   display: inline-block;

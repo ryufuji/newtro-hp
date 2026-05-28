@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Stick, Bebas_Neue, Playfair_Display } from "next/font/goo
 import "./globals.css";
 import { StatusBar } from "@/components/StatusBar";
 import { StickyHeader } from "@/components/StickyHeader";
+import { SystemPopup } from "@/components/SystemPopup";
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -73,6 +74,7 @@ export default function RootLayout({
         <StickyHeader />
         {children}
         <StatusBar />
+        <SystemPopup />
       </body>
     </html>
   );

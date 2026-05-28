@@ -2,24 +2,9 @@ import { CharacterShowcase } from "./CharacterShowcase";
 import { Countdown } from "./Countdown";
 import { LAUNCH_LABEL_EN } from "@/lib/launch";
 import { SectionBar } from "./SectionBar";
-
-const KEYWORDS = [
-  "FINTECH",
-  "WEB 3.0",
-  "AI",
-  "METAVERSE",
-  "BLOCKCHAIN",
-  "CYBERPUNK",
-  "BIG DATA",
-  "5G",
-  "NEURAL NET",
-  "IoT",
-  "VR / AR",
-  "QUANTUM",
-  "DEEPFAKE",
-  "CRYPTO",
-  "CLOUD",
-];
+import { KeywordCloud } from "./KeywordCloud";
+import { HeroWordmark } from "./HeroWordmark";
+import { HeroTagline } from "./HeroTagline";
 
 export function Hero() {
   return (
@@ -33,29 +18,16 @@ export function Hero() {
 
       <div className="relative scanlines noise crt-flicker pt-20 sm:pt-24 pb-16 sm:pb-24 px-5 sm:px-10">
         <div className="mx-auto max-w-6xl relative z-10">
-          <div className="pb-3 flex flex-wrap justify-center text-ink/70">
-            {KEYWORDS.map((k) => (
-              <span key={k} className="kw">
-                {k}
-              </span>
-            ))}
-          </div>
+          <KeywordCloud />
 
           <div className="text-center pt-4">
             <p className="font-bebas tracking-[0.5em] text-[10px] sm:text-xs text-ink/60">
               AN APPAREL ARCHIVE / BY OMATSURI
             </p>
 
-            <h1
-              className="glitch font-wordmark text-[16vw] sm:text-[14vw] lg:text-[160px] leading-[0.95] mt-6 sm:mt-8"
-              data-text="Newtique"
-            >
-              Newtique
-            </h1>
+            <HeroWordmark />
 
-            <p className="mt-4 sm:mt-6 text-lg sm:text-2xl lg:text-3xl font-display tracking-wide text-ink">
-              過去になっていく未来を着る。
-            </p>
+            <HeroTagline />
 
             <p className="mt-2 text-[10px] sm:text-xs tracking-[0.3em] text-ink/50">
               — WEARING THE FUTURE THAT BECOMES THE PAST —

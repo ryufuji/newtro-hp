@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { Signup } from "@/components/Signup";
 import { Story } from "@/components/Story";
+import { TimelineMarquee } from "@/components/TimelineMarquee";
 import { Values } from "@/components/Values";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Story />
+      <TimelineMarquee />
       <Archive />
       <Collaborations />
       <Values />
