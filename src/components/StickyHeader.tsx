@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { INSTAGRAM_URL } from "@/lib/env";
 
 const NAV = [
-  { label: "About", href: "#about" },
-  { label: "Episodes", href: "#episodes" },
-  { label: "Collection", href: "#collection" },
+  { label: "Story", href: "#story" },
+  { label: "Archive", href: "#archive" },
+  { label: "Collab", href: "#collaborations" },
   { label: "Membership", href: "#membership" },
 ];
 

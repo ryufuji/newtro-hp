@@ -30,13 +30,13 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <a className="hover:underline" href="#episodes">
-                  Episodes
+                <a className="hover:underline" href="#story">
+                  Story
                 </a>
               </li>
               <li>
-                <a className="hover:underline" href="#collection">
-                  Collection
+                <a className="hover:underline" href="#archive">
+                  Archive
                 </a>
               </li>
               <li>
