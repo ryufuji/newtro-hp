@@ -11,7 +11,7 @@ const works: Work[] = [
     caption:
       "金融×テクノロジーを意味する造語「フィンテック」。テックの部分しか松尾の頭に残らず、テック＝テクノだと解釈した結果、テクノカットの女の子が生まれた。着ているのは、Yellow Magic Orchestra のあの赤い衣装。",
     accent: "var(--color-fintech)",
-    edition: "T-SHIRT / ¥6,500",
+    edition: "T-SHIRT / ¥8,800 (税込)",
     status: "available",
   },
   {
@@ -23,7 +23,7 @@ const works: Work[] = [
     caption:
       "ブロックチェーン技術による自動データベース管理。第三者を介在させない通信が生むインターネットの可能性。「3.0」と聞いた松尾は“視力がめちゃくちゃ良い人”をデザインした。",
     accent: "var(--color-web3)",
-    edition: "T-SHIRT / ¥6,500",
+    edition: "T-SHIRT / ¥8,800 (税込)",
     status: "available",
   },
 ];
