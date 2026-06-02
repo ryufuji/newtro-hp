@@ -52,7 +52,7 @@ export function Archive() {
           <p className="mt-10 text-center text-xs tracking-[0.2em] text-mute">
             NEXT WORK TBA — STAY TUNED ON{" "}
             <a
-              href="https://www.instagram.com/newtro8/"
+              href="https://www.instagram.com/NEWTIQUE0701/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-ink"

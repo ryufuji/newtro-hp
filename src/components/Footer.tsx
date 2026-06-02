@@ -4,7 +4,7 @@ import { Rocket } from "./Rocket";
 import { SectionBar } from "./SectionBar";
 
 const sns = [
-  { label: "Instagram", href: INSTAGRAM_URL, handle: "@newtro8" },
+  { label: "Instagram", href: INSTAGRAM_URL, handle: "@NEWTIQUE0701" },
 ];
 
 export function Footer() {
