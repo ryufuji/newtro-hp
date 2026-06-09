@@ -2,12 +2,14 @@ import { LAUNCH_LABEL_EN } from "@/lib/launch";
 
 const items = [
   "NEWTIQUE",
+  "A DICTIONARY OF PERSONIFIED ERAS",
+  "ARC.001 / FINTECH GIRL",
+  "ARC.002 / WEB 3.0 GIRL",
+  "EDITION OF 30 / NEVER REPRINTED",
+  "INTERPRETED BY YOSUKE MATSUO",
   LAUNCH_LABEL_EN,
   "EST. 2026",
-  "EPISODE 01 / FINTECH",
-  "EPISODE 02 / WEB 3.0",
   "BY OMATSURI",
-  "PREMIUM BY INVITATION ONLY",
 ];
 
 export function Marquee() {

@@ -29,8 +29,11 @@ export function Hero() {
 
             <HeroTagline />
 
-            <p className="mt-2 text-[10px] sm:text-xs tracking-[0.3em] text-ink/50">
-              — WEARING THE FUTURE THAT BECOMES THE PAST —
+            <p className="mt-3 text-sm sm:text-base font-display text-ink/90">
+              テクノロジーを、女の子にする。
+            </p>
+            <p className="mt-1 text-[10px] sm:text-xs tracking-[0.3em] text-ink/50">
+              — A DICTIONARY OF PERSONIFIED ERAS —
             </p>
           </div>
         </div>

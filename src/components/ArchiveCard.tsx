@@ -10,9 +10,13 @@ export type Work = {
   title: string;
   keyword: string;
   image: string;
+  original: string;
+  misread: string;
+  result: string;
   caption: string;
   accent: string;
   edition?: string;
+  interpreter?: string;
   status: "available" | "coming" | "concept";
 };
 
@@ -36,11 +40,6 @@ export function ArchiveCard({ work: w }: { work: Work }) {
   return (
     <article ref={ref} className="group win-frame overflow-hidden">
       <div className="win-titlebar">
-        <div className="win-dots">
-          <span style={{ background: w.accent }} />
-          <span style={{ background: w.accent, opacity: 0.6 }} />
-          <span style={{ background: w.accent, opacity: 0.3 }} />
-        </div>
         <span>
           {w.no} / {w.year}
         </span>
@@ -85,14 +84,6 @@ export function ArchiveCard({ work: w }: { work: Work }) {
             </div>
           </div>
         )}
-
-        {w.status === "concept" && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="font-display text-5xl sm:text-7xl text-ink/80 tracking-widest">
-              ???
-            </p>
-          </div>
-        )}
       </div>
 
       <div className="p-6 sm:p-7">
@@ -104,13 +95,67 @@ export function ArchiveCard({ work: w }: { work: Work }) {
             {STATUS_LABEL[w.status]}
           </p>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-ink-soft">{w.caption}</p>
-        {w.edition && (
-          <p className="mt-5 font-bebas text-xs tracking-[0.3em] text-ink border-t-2 border-ink/20 pt-4">
-            EDITION · {w.edition}
+
+        {/* 3-step translation */}
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr_auto_1fr] gap-2 sm:gap-3 items-stretch text-[11px] sm:text-xs">
+          <Step label="ORIGINAL" value={w.original} />
+          <Arrow />
+          <Step label="松尾の誤読" value={w.misread} accent />
+          <Arrow />
+          <Step label="生まれた女の子" value={w.result} />
+        </div>
+
+        <p className="mt-5 text-sm leading-relaxed text-ink-soft">{w.caption}</p>
+
+        <div className="mt-5 border-t-2 border-ink/20 pt-4 flex items-baseline justify-between gap-3 flex-wrap">
+          <p className="font-bebas text-[11px] tracking-[0.3em] text-ink">
+            {w.edition}
           </p>
-        )}
+          {w.interpreter && (
+            <p className="font-bebas text-[10px] tracking-[0.25em] text-mute">
+              INTERPRETED BY {w.interpreter}
+            </p>
+          )}
+        </div>
+        <p className="mt-2 font-bebas text-[10px] tracking-[0.25em] text-mute">
+          NEVER REPRINTED / EC 15 + POPUP 15 = 30
+        </p>
       </div>
     </article>
+  );
+}
+
+function Step({
+  label,
+  value,
+  accent,
+}: {
+  label: string;
+  value: string;
+  accent?: boolean;
+}) {
+  return (
+    <div
+      className={`border-2 border-ink rounded-sm p-2 sm:p-3 flex flex-col justify-center ${
+        accent ? "bg-ink text-paper" : ""
+      }`}
+    >
+      <p
+        className={`font-bebas text-[9px] sm:text-[10px] tracking-[0.2em] ${
+          accent ? "text-paper/70" : "text-mute"
+        }`}
+      >
+        {label}
+      </p>
+      <p className="mt-1 leading-tight">{value}</p>
+    </div>
+  );
+}
+
+function Arrow() {
+  return (
+    <div className="hidden sm:flex items-center justify-center font-bebas text-lg text-ink/50">
+      →
+    </div>
   );
 }

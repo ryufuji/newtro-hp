@@ -21,16 +21,21 @@ export function Story() {
             </span>
           </h2>
 
-          <div className="mt-10 space-y-6 text-base sm:text-lg leading-[1.9]">
-            <p>
-              NewTiqueは、
-              <br />
-              テクノロジーとレトロポップを掛け合わせたアパレルブランドです。
+          <div className="mt-10 space-y-8 text-base sm:text-lg leading-[1.9]">
+            <p className="font-display text-2xl sm:text-3xl text-paper">
+              テクノロジーを、女の子にする。
             </p>
-            <p className="text-fintech">
-              “最先端”が一瞬で過去になる時代の切なさを、
+            <p>
+              Newtique は、時代のキーワードを
+              <span className="text-fintech">女の子に擬人化</span>
+              していくアパレルブランド。
               <br />
-              どこか懐かしい女の子たちと共に表現しています。
+              用語が消える前に、姿を残します。
+            </p>
+            <p className="text-paper/80">
+              一語につき、一人。
+              <br />
+              フィンテック。Web 3.0。AI。やがて消える、いまの言葉たち。
             </p>
           </div>
 
@@ -44,49 +49,55 @@ export function Story() {
             <div className="overflow-hidden">
               <div className="border-t-2 border-paper/30 pt-10 space-y-7 text-sm sm:text-base leading-[2] text-paper/85">
                 <p>
-                  <strong className="text-paper">NewTique（ニューティーク）</strong>は、
+                  <strong className="text-paper">Newtique（ニューティーク）</strong>は、
                   <br />
-                  “New” と “Antique” を掛け合わせた造語から生まれた、レトロポップを基調とするアパレルブランドです。
+                  “New（新しい）” と “Antique（古い）” を掛け合わせた造語。
                 </p>
                 <p>
-                  ブランドの中心にあるのは、
+                  ここでの <em className="text-web3-deep not-italic">Antique</em> は、
                   <br />
-                  「テクノロジー」と「女の子」という二つのモチーフ。
+                  日本のサブカルチャーが古来から続けてきた
+                  <em className="text-fintech not-italic">「擬人化」</em>の伝統を指します。
                 </p>
                 <p>
-                  AI、インターネット、デジタルカルチャー、未来的なキーワード。
+                  OS-tan、艦これ、ウマ娘、けものフレンズ、ヘタリア。
                   <br />
-                  本来“最先端”として扱われるそれらは、驚くほどの速さで古くなっていきます。
+                  日本はあらゆるものを女の子にしてきた。
                 </p>
                 <p>
-                  NewTiqueは、その
-                  <em className="text-fintech not-italic">“最先端がすぐ過去になる瞬間”</em>に宿る、
-                  <br />
-                  どこか切なく、でも愛おしい感覚をデザインとして表現しています。
-                </p>
-                <p>
-                  描かれるのは、未来を感じさせるテクノロジーと、
-                  <br />
-                  どこか懐かしさを纏った女の子たち。
+                  Newtique は、その文化をいまの
+                  <em className="text-fintech not-italic">テクノロジー用語</em>
+                  に向ける実験です。
                 </p>
                 <p className="font-display text-lg sm:text-xl text-paper">
-                  新しいはずなのに懐かしい。
+                  時代の擬人化辞典。
                   <br />
-                  古いはずなのに新しく見える。
+                  用語を女の子に変換する、もう一つの言語。
                 </p>
                 <p>
-                  流行と陳腐化を繰り返す現代において、
+                  解釈の歪みは、誤りではなく
+                  <em className="text-web3-deep not-italic">もうひとつの正解</em>。
                   <br />
-                  「消費されて終わるもの」ではなく、
+                  フィンテック → テクノカット。Web 3.0 → 視力 2.0。
                   <br />
-                  時代そのものを纏うための服を目指しています。
+                  キーワードがひとり、誰かの頭の中を経由してデザインに変わる。
                 </p>
                 <p>
-                  NewTiqueは、
+                  その<em className="text-fintech not-italic">「誰かの頭」</em>を
+                  Newtique では <strong className="text-paper">The Interpreter（解釈者）</strong> と呼びます。
                   <br />
-                  <em className="text-web3-deep not-italic">“廃れていくこと”さえも美しさとして捉え</em>、
+                  現在の Interpreter は <strong className="text-paper">松尾陽介</strong>。
                   <br />
-                  移り変わるカルチャーの儚さを、レトロポップという形で残していくブランドです。
+                  ゲスト解釈者によるコラボレーション・ドロップも順次発表予定。
+                </p>
+                <p>
+                  すべての作品は
+                  <em className="text-web3-deep not-italic">
+                    「一語につき一人」「シリアルナンバー入り」「二度と作らない」
+                  </em>
+                  。
+                  <br />
+                  擬人化辞典は、そろえる楽しみのために作られます。
                 </p>
               </div>
             </div>
