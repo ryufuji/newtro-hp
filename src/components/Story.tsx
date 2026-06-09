@@ -93,11 +93,14 @@ export function Story() {
                 <p>
                   すべての作品は
                   <em className="text-web3-deep not-italic">
-                    「一語につき一人」「シリアルナンバー入り」「二度と作らない」
+                    「一語につき一人」「30枚限定」「二度と作らない」
                   </em>
                   。
                   <br />
                   擬人化辞典は、そろえる楽しみのために作られます。
+                </p>
+                <p className="text-paper/60 text-xs sm:text-sm">
+                  ※ 着心地は前提条件として担保。価値はそこではなく、辞典そのものに置きます。
                 </p>
               </div>
             </div>

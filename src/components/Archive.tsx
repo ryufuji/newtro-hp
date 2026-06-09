@@ -48,7 +48,7 @@ export function Archive() {
         <div className="mx-auto max-w-6xl relative z-10">
           <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-ink-soft">
             時代のキーワードを「女の子」に翻訳する辞典。
-            一語につき一人、シリアルナンバー入り、二度と作らない。
+            一語につき一人、30枚限定、二度と作らない。
           </p>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2">

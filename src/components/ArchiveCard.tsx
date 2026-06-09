@@ -118,7 +118,7 @@ export function ArchiveCard({ work: w }: { work: Work }) {
           )}
         </div>
         <p className="mt-2 font-bebas text-[10px] tracking-[0.25em] text-mute">
-          NEVER REPRINTED / EC 15 + POPUP 15 = 30
+          NEVER REPRINTED / SPLIT: EC + POPUP
         </p>
       </div>
     </article>
