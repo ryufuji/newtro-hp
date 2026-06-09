@@ -7,8 +7,10 @@ const SECTIONS: { id: string; label: string }[] = [
   { id: "hero", label: "NEWTIQUE.EXE" },
   { id: "story", label: "README.TXT" },
   { id: "archive", label: "ARCHIVE.DB" },
-  { id: "collaborations", label: "COLLABS.DIR" },
+  { id: "interpreter", label: "PERSONNEL.DAT" },
+  { id: "collaborations", label: "GUESTS.DIR" },
   { id: "values", label: "VALUES.CFG" },
+  { id: "drops", label: "DROPS.LOG" },
   { id: "signup", label: "JOIN_LINE.SH" },
 ];
 

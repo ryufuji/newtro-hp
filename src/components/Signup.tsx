@@ -9,7 +9,7 @@ export function Signup() {
   return (
     <section id="signup" className="relative">
       <SectionBar
-        index="05"
+        index="07"
         title="JOIN — 発射通知を受け取る"
         hint="JOIN_LINE.SH // OFFICIAL CHANNEL"
       />

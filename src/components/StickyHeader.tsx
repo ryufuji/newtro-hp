@@ -7,8 +7,10 @@ import { INSTAGRAM_URL } from "@/lib/env";
 const NAV = [
   { label: "Story", href: "#story" },
   { label: "Archive", href: "#archive" },
-  { label: "Collab", href: "#collaborations" },
+  { label: "Interpreter", href: "#interpreter" },
+  { label: "Guests", href: "#collaborations" },
   { label: "Values", href: "#values" },
+  { label: "Drops", href: "#drops" },
 ];
 
 export function StickyHeader() {

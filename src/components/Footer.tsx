@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative bg-ink text-paper">
       <SectionBar
-        index="06"
+        index="08"
         title="FOOTER · CONTACT"
         hint={`_FOOTER.SYS // LAUNCH ${LAUNCH_LABEL_JP}`}
       />
@@ -47,13 +47,23 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a className="hover:underline" href="#interpreter">
+                    The Interpreter
+                  </a>
+                </li>
+                <li>
                   <a className="hover:underline" href="#collaborations">
-                    Collaborations
+                    Guest Interpreters
                   </a>
                 </li>
                 <li>
                   <a className="hover:underline" href="#values">
                     Values
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="#drops">
+                    Drop Schedule
                   </a>
                 </li>
                 <li>

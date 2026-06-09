@@ -1,7 +1,9 @@
 import { Archive } from "@/components/Archive";
 import { Collaborations } from "@/components/Collaborations";
+import { DropSchedule } from "@/components/DropSchedule";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { Interpreter } from "@/components/Interpreter";
 import { Marquee } from "@/components/Marquee";
 import { Signup } from "@/components/Signup";
 import { Story } from "@/components/Story";
@@ -16,8 +18,10 @@ export default function Home() {
       <Story />
       <TimelineMarquee />
       <Archive />
+      <Interpreter />
       <Collaborations />
       <Values />
+      <DropSchedule />
       <Signup />
       <Footer />
     </main>

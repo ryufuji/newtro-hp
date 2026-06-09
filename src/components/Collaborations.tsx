@@ -40,7 +40,7 @@ export function Collaborations() {
   return (
     <section id="collaborations" className="relative bg-paper">
       <SectionBar
-        index="03"
+        index="04"
         title="GUEST INTERPRETERS — コラボレーション"
         hint={`GUESTS.DIR // ${guests.length} ENTRIES — REDACTED`}
       />

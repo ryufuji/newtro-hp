@@ -27,7 +27,7 @@ export function Values() {
   return (
     <section id="values" className="relative bg-paper">
       <SectionBar
-        index="04"
+        index="05"
         title="VALUES — 大事にしたいこと"
         hint="VALUES.CFG // 4 ITEMS"
       />
