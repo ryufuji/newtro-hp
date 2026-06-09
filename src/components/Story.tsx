@@ -99,9 +99,6 @@ export function Story() {
                   <br />
                   擬人化辞典は、そろえる楽しみのために作られます。
                 </p>
-                <p className="text-paper/60 text-xs sm:text-sm">
-                  ※ 着心地は前提条件として担保。価値はそこではなく、辞典そのものに置きます。
-                </p>
               </div>
             </div>
           </div>

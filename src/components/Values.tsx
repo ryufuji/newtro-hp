@@ -23,9 +23,6 @@ const values = [
   },
 ];
 
-const PREMISE =
-  "前提：着心地。— 触れた瞬間に分かる品質は、当然の条件として担保します。価値の話はそこから先で。";
-
 export function Values() {
   return (
     <section id="values" className="relative bg-paper">
@@ -36,16 +33,6 @@ export function Values() {
       />
       <div className="relative dot-grid noise px-5 sm:px-10 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl relative z-10">
-          {/* baseline / premise strip — 着心地はここ */}
-          <div className="mb-8 border-2 border-ink/30 border-dashed rounded-md px-5 py-3 flex items-center gap-3">
-            <span className="font-bebas tracking-[0.25em] text-[10px] sm:text-xs text-ink/60 whitespace-nowrap">
-              ⊿ PREMISE
-            </span>
-            <p className="text-xs sm:text-sm text-ink-soft leading-relaxed">
-              {PREMISE}
-            </p>
-          </div>
-
           <div className="grid gap-px bg-ink border-2 border-ink rounded-md overflow-hidden sm:grid-cols-2">
             {values.map((v) => (
               <div key={v.n} className="bg-paper p-7 sm:p-8">
