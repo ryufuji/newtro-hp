@@ -140,7 +140,7 @@ export function DropSchedule() {
             </span>
             <p className="text-xs sm:text-sm text-paper/85 leading-relaxed">
               現状は <strong className="text-paper">PayPal のみ</strong> の受付です。
-              その他決済（クレジットカード・コンビニ払い等）は
+              その他決済（クレジットカード等）は
               <strong className="text-paper">2026年7月中</strong>に順次対応予定。
             </p>
           </div>
