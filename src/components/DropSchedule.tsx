@@ -133,6 +133,18 @@ export function DropSchedule() {
             </a>
           </div>
 
+          {/* payment methods notice */}
+          <div className="mt-8 border-2 border-paper/25 border-dashed rounded-md px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <span className="font-bebas tracking-[0.25em] text-[10px] sm:text-xs text-paper/60 whitespace-nowrap">
+              ⊿ PAYMENT
+            </span>
+            <p className="text-xs sm:text-sm text-paper/85 leading-relaxed">
+              現状は <strong className="text-paper">PayPal のみ</strong> の受付です。
+              その他決済（クレジットカード・コンビニ払い等）は
+              <strong className="text-paper">2026年7月中</strong>に順次対応予定。
+            </p>
+          </div>
+
           <p className="mt-6 text-center text-xs tracking-[0.2em] text-paper/55">
             ※ 完売後は再生産しません。"NEVER REPRINTED" がブランドポリシーです。
           </p>
