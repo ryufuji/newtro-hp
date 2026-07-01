@@ -16,7 +16,7 @@ export const LINE_FRIEND_URL =
 
 export const SHOP_URL =
   process.env.NEXT_PUBLIC_SHOP_URL?.trim() ||
-  "https://newtro-9633.myshopify.com/";
+  "https://shop.newtique.jp/";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://newtique.jp";
