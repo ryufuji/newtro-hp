@@ -33,8 +33,8 @@ export function SystemPopup() {
 
     let timer: number;
     const schedule = () => {
-      // first appearance 18-30s in, then every 40-70s
-      const delay = 18000 + Math.random() * 12000;
+      // first appearance 60-120s in, then every 4-7 minutes
+      const delay = 60000 + Math.random() * 60000;
       timer = window.setTimeout(() => {
         setMsg(MESSAGES[Math.floor(Math.random() * MESSAGES.length)]);
       }, delay);
@@ -48,7 +48,8 @@ export function SystemPopup() {
     if (msg) return;
     let timer: number;
     const id = window.setTimeout(() => {
-      const t = 40000 + Math.random() * 30000;
+      // 4-7 min between subsequent appearances
+      const t = 240000 + Math.random() * 180000;
       timer = window.setTimeout(() => {
         setMsg(MESSAGES[Math.floor(Math.random() * MESSAGES.length)]);
       }, t);
