@@ -30,7 +30,7 @@ const guests: Guest[] = [
   },
   {
     no: "GUEST.04",
-    hint: "M••E IN W••LD",
+    hint: "M••• •• •••••",
     context: "GLOBAL CRAFT",
     drop: "TBA",
   },
