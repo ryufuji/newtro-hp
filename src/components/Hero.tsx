@@ -1,6 +1,7 @@
 import { CharacterShowcase } from "./CharacterShowcase";
 import { Countdown } from "./Countdown";
 import { LAUNCH_LABEL_EN } from "@/lib/launch";
+import { SHOP_URL } from "@/lib/env";
 import { SectionBar } from "./SectionBar";
 import { KeywordCloud } from "./KeywordCloud";
 import { HeroWordmark } from "./HeroWordmark";
@@ -57,6 +58,19 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <a
+              href={SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper border-2 border-ink px-7 py-3 text-sm font-medium tracking-wider hover:opacity-90 transition w-full sm:w-auto"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              SHOP / 通販サイトへ
+            </a>
             <a
               href="#signup"
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wider transition w-full sm:w-auto border-2 border-ink"

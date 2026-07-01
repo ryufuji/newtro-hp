@@ -1,5 +1,5 @@
 import { LAUNCH_LABEL_JP } from "@/lib/launch";
-import { CONTACT_EMAIL, INSTAGRAM_URL } from "@/lib/env";
+import { CONTACT_EMAIL, INSTAGRAM_URL, SHOP_URL } from "@/lib/env";
 import { Rocket } from "./Rocket";
 import { SectionBar } from "./SectionBar";
 
@@ -36,6 +36,16 @@ export function Footer() {
                 / NAVIGATE
               </p>
               <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <a
+                    className="hover:underline font-bebas tracking-[0.2em]"
+                    href={SHOP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SHOP ↗ 通販サイト
+                  </a>
+                </li>
                 <li>
                   <a className="hover:underline" href="#story">
                     Story

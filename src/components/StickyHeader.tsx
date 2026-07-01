@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { INSTAGRAM_URL } from "@/lib/env";
+import { INSTAGRAM_URL, SHOP_URL } from "@/lib/env";
 
 const NAV = [
   { label: "Story", href: "#story" },
@@ -96,8 +96,16 @@ export function StickyHeader() {
             <InstagramIcon />
           </a>
           <a
+            href={SHOP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-ink text-paper px-4 sm:px-5 h-10 text-xs sm:text-sm font-bebas tracking-[0.2em] hover:opacity-90 transition"
+          >
+            SHOP
+          </a>
+          <a
             href="#signup"
-            className="hidden sm:inline-flex items-center justify-center rounded-full bg-ink text-paper px-4 sm:px-5 h-10 text-xs sm:text-sm font-bebas tracking-[0.2em] hover:opacity-90 transition"
+            className="hidden sm:inline-flex items-center justify-center rounded-full border-2 border-ink px-4 sm:px-5 h-10 text-xs sm:text-sm font-bebas tracking-[0.2em] hover:bg-ink hover:text-paper transition"
           >
             JOIN
           </a>

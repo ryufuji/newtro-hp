@@ -1,3 +1,4 @@
+import { SHOP_URL } from "@/lib/env";
 import { SectionBar } from "./SectionBar";
 
 type Drop = {
@@ -111,12 +112,28 @@ export function DropSchedule() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Note title="EC" body="15枚 / newtique.jp" />
+            <ECLink />
             <Note title="POPUP" body="15枚 / 会場限定（情報は順次告知）" />
             <Note title="LINE先行" body="24時間先行アクセス / 公式LINE登録者" />
           </div>
 
-          <p className="mt-10 text-center text-xs tracking-[0.2em] text-paper/55">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-paper text-ink px-7 py-3 text-sm font-medium tracking-wider hover:opacity-90 transition"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              SHOP / 通販サイトへ
+            </a>
+          </div>
+
+          <p className="mt-6 text-center text-xs tracking-[0.2em] text-paper/55">
             ※ 完売後は再生産しません。"NEVER REPRINTED" がブランドポリシーです。
           </p>
         </div>
@@ -133,5 +150,24 @@ function Note({ title, body }: { title: string; body: string }) {
       </p>
       <p className="mt-1 text-sm leading-relaxed text-paper/90">{body}</p>
     </div>
+  );
+}
+
+function ECLink() {
+  return (
+    <a
+      href={SHOP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group border border-paper/25 rounded-sm p-4 transition hover:border-paper/60 hover:bg-paper/5"
+    >
+      <p className="font-bebas tracking-[0.3em] text-[10px] text-paper/55 flex items-center gap-2">
+        EC
+        <span className="ml-auto opacity-70 group-hover:opacity-100">↗</span>
+      </p>
+      <p className="mt-1 text-sm leading-relaxed text-paper/90">
+        15枚 / 通販サイトへ
+      </p>
+    </a>
   );
 }

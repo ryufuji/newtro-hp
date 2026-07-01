@@ -14,6 +14,10 @@ export const INSTAGRAM_URL =
 export const LINE_FRIEND_URL =
   process.env.NEXT_PUBLIC_LINE_FRIEND_URL?.trim() || "";
 
+export const SHOP_URL =
+  process.env.NEXT_PUBLIC_SHOP_URL?.trim() ||
+  "https://newtro-9633.myshopify.com/";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://newtique.jp";
 
